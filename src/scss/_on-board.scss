@@ -41,3 +41,24 @@
       }
     }
 }
+
+@media screen and (max-width: 1280px){
+  .on-board{
+    flex-direction: column-reverse;
+
+    &__info{
+      width: 100%;
+    }
+  }
+  
+}
+
+@media screen and (max-width: 450px) {
+  .on-board {
+
+    &__info {
+      font-size: 14px;
+    }
+  }
+
+}

@@ -21,5 +21,12 @@
     background-color: $white;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  .tab-title {
+    padding: 5px;
+    font-size: 16px;
+  }
 
 }

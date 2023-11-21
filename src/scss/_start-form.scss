@@ -1,5 +1,5 @@
 .start-form {
-  width: 33%;
+  width: 415px;
 
   &__tabs {
     position: relative;
@@ -11,7 +11,7 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 217px;
+      width: 215px;
       height: 1px;
       background-color: $black;
     }
@@ -21,7 +21,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 217px;
+      width: 215px;
       height: 1px;
       background-color: $black;
     }
@@ -40,4 +40,18 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 450px) {
+  .start-form {
+    width: auto;
+
+    &__tabs{
+
+      &::before, &::after{
+        display: none;
+      }
+    }
+  }
+
 }

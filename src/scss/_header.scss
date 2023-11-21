@@ -56,3 +56,9 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 450px){
+  .header{
+    justify-content: center;
+  }
+}

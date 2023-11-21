@@ -30,3 +30,12 @@
     border-radius: 10px;
   }
 }
+
+@media screen and (max-width: 450px){
+  .form-input{
+
+    &__label{
+      font-size: 12px;
+    }
+  }
+}

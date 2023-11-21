@@ -11,7 +11,7 @@
   &__field:checked+label {
     color: $black;
 
-    &:after{
+    &:after {
       opacity: 1;
     }
   }
@@ -54,4 +54,23 @@
     opacity: 0;
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  .check-input {
+
+    &__label {
+      font-size: 12px;
+    }
+
+    &__label:before {
+      width: 12px;
+      height: 12px;
+    }
+
+    &__label:after {
+      width: 6px;
+      height: 6px;
+    }
+  }
 }
