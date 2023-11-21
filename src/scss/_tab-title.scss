@@ -1,0 +1,25 @@
+@import "./font";
+
+.tab-title {
+  padding: 15px;
+  border: 1px solid $black;
+  border-bottom: none;
+  @include primary;
+  font-size: 20px;
+  text-align: center;
+  color: $orange;
+  background-color: $dark_grey;
+  cursor: pointer;
+
+  &:active,
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+
+  &_visible {
+    background-color: $white;
+  }
+
+
+}

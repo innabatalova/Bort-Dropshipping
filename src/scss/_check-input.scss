@@ -1,0 +1,57 @@
+@import "./font";
+
+.check-input {
+  margin-bottom: 10px;
+
+  &__field {
+    position: absolute;
+    appearance: none;
+  }
+
+  &__field:checked+label {
+    color: $black;
+
+    &:after{
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    position: relative;
+    left: 20px;
+    @include primary;
+    font-size: 16px;
+    color: $black;
+  }
+
+  &__label a {
+    text-decoration: underline;
+    color: $black;
+  }
+
+  &__label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $orange;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &__label:after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $orange;
+    top: 4px;
+    left: -16px;
+    z-index: 2;
+    opacity: 0;
+  }
+
+}

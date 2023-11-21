@@ -1,0 +1,58 @@
+@import "./font";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.navbar {
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    @include primary;
+    font-size: 20px;
+    color: $black;
+
+    &::after {
+      position: absolute;
+      right: -10px;
+      top: 3px;
+      content: '';
+      height: 20px;
+      width: 1px;
+      background-color: $black;
+    }
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: $orange;
+    }
+
+    &_open {
+      color: $orange;
+
+      &:active,
+      &:hover,
+      &:focus {
+        color: $orange_hover;
+      }
+    }
+  }
+
+  &__item:last-child{
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  .navbar{
+    display: none;
+  }
+}

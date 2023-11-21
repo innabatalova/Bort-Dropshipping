@@ -1,0 +1,18 @@
+@import "./font";
+
+.main-button {
+  padding: 10px 50px;
+  border: 1px solid $orange;
+  border-radius: 10px;
+  background-color: $white;
+  @include primary;
+  font-size: 20px;
+  color: $black;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: $orange;
+    color: $white;
+  }
+}

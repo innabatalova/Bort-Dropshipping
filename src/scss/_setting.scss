@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-width: 320px;
+
+  &::-webkit-scrollbar {
+      width: 0;
+    }
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul,ol{
+  margin: 0;
+}
+
+.layout {
+  max-width: 1260px;
+  margin: 50px auto;
+}

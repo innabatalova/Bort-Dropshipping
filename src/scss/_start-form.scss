@@ -1,0 +1,43 @@
+.start-form {
+  width: 33%;
+
+  &__tabs {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 217px;
+      height: 1px;
+      background-color: $black;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 217px;
+      height: 1px;
+      background-color: $black;
+    }
+
+    &_auth {
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &_registration {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

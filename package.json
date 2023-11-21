@@ -1,0 +1,42 @@
+{
+  "name": "Bort-Dropshipping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --open",
+    "clean": "rd /s /q dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/innabatalova/Bort-Dropshipping.git"
+  },
+  "author": "Inna Batalova",
+  "license": "ISC",
+  "homepage": "https://github.com/innabatalova/Bort-Dropshipping#readme",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.3",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3"
+  }
+}
