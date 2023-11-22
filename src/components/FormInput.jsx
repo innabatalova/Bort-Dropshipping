@@ -1,10 +1,16 @@
 import React from 'react'
+import { Field } from 'formik'
 
-const FormInput = ({ idFormInputProps, titleFormInputProps, typeFormInputProps } ) => {
+const FormInput = ({ idFormInputProps, titleFormInputProps, typeFormInputProps }) => {
   return (
     <div className="form-input">
       <label htmlFor={idFormInputProps} className="form-input__label">{titleFormInputProps}</label>
-      <input type={typeFormInputProps} id={idFormInputProps} className="form-input__field" />
+      <Field
+        type={typeFormInputProps}
+        id={idFormInputProps}
+        name={idFormInputProps}
+        className="form-input__field"
+      />
     </div>
   )
 }

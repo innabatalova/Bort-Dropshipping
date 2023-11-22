@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MainButton = ({ classButtonProps, titleButtonProps} ) => {
+const MainButton = ({ classButtonProps, titleButtonProps } ) => {
   return (
-    <button className={`main-button ` + classButtonProps}>{titleButtonProps}</button>
+    <button type='submit' className={`main-button ` + classButtonProps} >{titleButtonProps}</button>
   )
 }
 

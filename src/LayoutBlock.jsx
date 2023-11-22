@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
-import Header from './components/Header'
-import OnBoard from './components/OnBoard'
+import useRoutes from './core/routes'
+import { userAuthContext } from './context/UserAuthContext'
 
 const LayoutBlock = () => {
+  const routes = useRoutes()
+  const [contextUserAuth, setContextUserAuth] = useState(false)
+
   return (
-    <div className="layout">
-      <Header />
-      <OnBoard />
-    </div>
+    <userAuthContext.Provider value={[contextUserAuth, setContextUserAuth]}>
+      <BrowserRouter>
+        <div className="layout">
+          {routes}
+        </div>
+      </BrowserRouter>
+    </userAuthContext.Provider>
   )
 }
 

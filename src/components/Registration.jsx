@@ -1,4 +1,7 @@
 import React from 'react'
+import { Formik, Form } from 'formik'
+
+import checkAuth from '../core/checkAuth'
 
 import FormInput from './FormInput'
 import CheckInput from './CheckInput'
@@ -7,8 +10,8 @@ import MainButton from './MainButton'
 const Registration = () => {
   const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>
 
-  const regInputValues = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email'], 
-    ['password', 'Пароль', 'password'], ['password-double', 'Повтор пароля', 'password']]
+  const regInputValues = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email'],
+    ['password', 'Пароль', 'password'], ['passwordDouble', 'Повтор пароля', 'password']]
   const sortRegInputValues = regInputValues.map((item, index) =>
     <FormInput key={index} idFormInputProps={item[0]} titleFormInputProps={item[1]} typeFormInputProps={item[2]} />)
 
@@ -18,11 +21,20 @@ const Registration = () => {
 
   return (
     <div className="registration">
-      <form className="registration__form">
-        {sortRegInputValues}
-        {sortRegCheckboxValues}
-        <MainButton classButtonProps='registration__button' titleButtonProps='Зарегистрироваться' />
-      </form>
+      <Formik
+        initialValues={{ bio: '', inn: '', tel: '', email: '', password: '', passwordDouble: '' }}
+        onSubmit={(values, { resetForm }) => {
+          checkAuth.createUser(values)
+          resetForm()
+        }}>
+        {() => (
+          <Form className="registration__form">
+            {sortRegInputValues}
+            {sortRegCheckboxValues}
+            <MainButton classButtonProps='registration__button' titleButtonProps='Зарегистрироваться' />
+          </Form>
+        )}
+      </Formik>
     </div>
   )
 }
