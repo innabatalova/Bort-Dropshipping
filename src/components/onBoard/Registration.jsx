@@ -1,11 +1,11 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
 
-import checkAuth from '../core/checkAuth'
+import checkAuth from '../../core/checkAuth'
 
 import FormInput from './FormInput'
 import CheckInput from './CheckInput'
-import MainButton from './MainButton'
+import MainButton from '../main/MainButton'
 
 const Registration = () => {
   const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>

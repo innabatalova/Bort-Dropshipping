@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import TabTitle from './TabTitle'
+import TabTitle from '../header/TabTitle'
 import Registration from './Registration'
 import Auth from './Auth'
 

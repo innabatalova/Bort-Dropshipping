@@ -1,13 +1,14 @@
 import React from 'react'
 
-import Logo from '../static/img/logo.svg'
+import Logo from '../../static/img/logo.svg'
 
-const Header = () => {
+const Header = ({ userHeaderProps }) => {
   return (
     <div className="header">
       <div className="logo">
         <img src={Logo} alt="logo Bort" />
       </div>
+      {userHeaderProps}
     </div>
   )
 }

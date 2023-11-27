@@ -7,6 +7,8 @@
 }
 
 .navbar {
+  display: flex;
+  align-items: center;
 
   &__item {
     position: relative;
@@ -32,33 +34,27 @@
       color: $orange;
     }
 
-    &_open {
-      color: $orange;
-
-      &:active,
-      &:hover,
-      &:focus {
-        color: $orange_hover;
+    &_noafter {
+      &::after {
+        display: none;
       }
     }
   }
 
-  &__item:last-child{
-
-    &::after {
-      display: none;
-    }
+  &__question {
+    width: 20px;
+    height: 20px;
   }
 }
 
-@media screen and (max-width: 767px){
-  .navbar{
+@media screen and (max-width: 767px) {
+  .navbar {
     display: none;
   }
 }
 
-@media screen and (max-width: 450px){
-  .header{
+@media screen and (max-width: 450px) {
+  .header {
     justify-content: center;
   }
 }

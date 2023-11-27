@@ -1,0 +1,12 @@
+.user-content{
+  width: 75%;
+  border: 1px solid green;
+
+  &__item{
+    display: none;
+
+    &_active{
+      display: block;
+    }
+  }
+}

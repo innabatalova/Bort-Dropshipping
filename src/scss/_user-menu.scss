@@ -1,0 +1,37 @@
+@import "./font";
+
+.user-menu {
+  width: 20%;
+
+  &__item {
+    padding: 18px 25px;
+    border: 1px solid $dark_grey;
+    @include primary;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $black;
+    background-color: $white;
+    background-image: url(../static/img/menu-arrow.svg);
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: center;
+    cursor: pointer;
+
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $orange;
+      color: $white;
+      border: 1px solid $orange;
+      background-image: url(../static/img/menu-arrow-hover.svg);
+    }
+
+    &_active {
+      background-color: $orange;
+      color: $white;
+      border: 1px solid $orange;
+      background-image: url(../static/img/menu-arrow-hover.svg);
+    }
+
+  }
+}

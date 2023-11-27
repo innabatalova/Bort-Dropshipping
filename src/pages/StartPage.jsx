@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Header from '../components/Header'
-import OnBoard from '../components/OnBoard'
+import Header from '../components/header/Header'
+import OnBoard from '../components/onBoard/OnBoard'
 
 const StartPage = () => {
   return (
