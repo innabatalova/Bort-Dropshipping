@@ -3,8 +3,8 @@ import { Field } from 'formik'
 
 const FormInput = ({ idFormInputProps, titleFormInputProps, typeFormInputProps }) => {
   return (
-    <div className="form-input">
-      <label htmlFor={idFormInputProps} className="form-input__label">{titleFormInputProps}</label>
+    <div className='form-input'>
+      <label htmlFor={idFormInputProps} className='form-input__label'>{titleFormInputProps}</label>
       <Field
         type={typeFormInputProps}
         id={idFormInputProps}

@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 
-import checkAuth from '../../core/checkAuth'
 import { userAuthContext } from '../../context/UserAuthContext'
 
 import FormInput from './FormInput'
 import MainButton from '../main/MainButton'
+
+import useCheckUser from '../../hooks/useCheckUser'
 
 const Auth = () => {
   const regInputValues = [['email', 'Email', 'email'], ['password', 'Пароль', 'password']]
@@ -23,7 +24,7 @@ const Auth = () => {
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={(values) => {
-          const result = checkAuth.checkUser(values)
+          const result = useCheckUser(values)
           setContextUserAuth(result)
           openProfile()
         }}>

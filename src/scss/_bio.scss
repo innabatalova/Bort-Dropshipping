@@ -1,0 +1,63 @@
+@import "./font";
+
+.bio {
+  display: flex;
+  padding: 50px;
+
+  &__form {
+    width: 65%;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border: 1px solid $dark_grey;
+    border-radius: 10px;
+
+    &__label {
+      @include primary;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &__field {
+      @include primary;
+      font-size: 18px;
+      color: $black;
+    }
+  }
+
+  &__btn__wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  &__button {
+    padding: 10px 30px;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__link {
+    width: 60%;
+    margin-bottom: 15px;
+    @include primary;
+    font-size: 14px;
+    color: $orange;
+    text-decoration: underline;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $black;
+    }
+  }
+}

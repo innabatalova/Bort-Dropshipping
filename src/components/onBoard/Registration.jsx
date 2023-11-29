@@ -1,11 +1,11 @@
 import React from 'react'
 import { Formik, Form } from 'formik'
 
-import checkAuth from '../../core/checkAuth'
-
 import FormInput from './FormInput'
 import CheckInput from './CheckInput'
 import MainButton from '../main/MainButton'
+
+import useCreateUser from '../../hooks/useCreateUser'
 
 const Registration = () => {
   const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>
@@ -24,7 +24,7 @@ const Registration = () => {
       <Formik
         initialValues={{ bio: '', inn: '', tel: '', email: '', password: '', passwordDouble: '' }}
         onSubmit={(values, { resetForm }) => {
-          checkAuth.createUser(values)
+          useCreateUser(values)
           resetForm()
         }}>
         {() => (
