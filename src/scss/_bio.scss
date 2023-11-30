@@ -61,3 +61,45 @@
     }
   }
 }
+
+@media screen and (max-width: 1290px) {
+  .bio {
+    padding: 20px;
+
+    &__btn {
+
+      &__wrapper {
+        flex-direction: column;
+      }
+    }
+
+    &__button {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .bio {
+    flex-direction: column;
+
+    &__form {
+      width: 100%;
+    }
+
+    &__link {
+      width: 100%;
+    }
+
+    &-item {
+
+      &__label {
+        font-size: 12px;
+      }
+
+      &__field {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -11,10 +11,9 @@ const Bio = () => {
   const [contextOpenModal, setContextOpenModal] = useContext(modalFormContext)
   
   const getUserData = useGetUser()
-  const userDataProps = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email']]
 
-  const userPasswordValues = { passwordOld: '', passwordNew: '', passwordDoubleNew: '' }
-  const userPasswordProps = [['passwordOld', 'Старый пароль', 'password'], ['passwordNew', 'Новый пароль', 'password'],
+  const userDataProps = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email']]
+  const userPasswordProps = [['passwordOld', 'Старый пароль', 'password'], ['password', 'Новый пароль', 'password'],
   ['passwordDoubleNew', 'Повтор пароля', 'password']]
 
   const bioInputValues = [['bio', 'ФИО', getUserData.bio], ['inn', 'ИНН', getUserData.inn],
@@ -37,7 +36,7 @@ const Bio = () => {
         <a className="bio__link" href="">Скачать условия Политики кондифициальности</a>
       </div>
       <ModalForm openModalFormProps={contextOpenModal === 'data' ? 'modal-overlay_active' : ''} titleModalFormProps='Ваши данные' initialModalFormProps={getUserData} btnModalFormProps=' данные' dataModalFormProps={userDataProps} />
-      <ModalForm openModalFormProps={contextOpenModal === 'password' ? 'modal-overlay_active' : ''} titleModalFormProps='Ваш пароль' initialModalFormProps={userPasswordValues} btnModalFormProps=' пароль' dataModalFormProps={userPasswordProps} />
+      <ModalForm openModalFormProps={contextOpenModal === 'password' ? 'modal-overlay_active' : ''} titleModalFormProps='Ваш пароль' initialModalFormProps={getUserData} btnModalFormProps=' пароль' dataModalFormProps={userPasswordProps} />
     </div>
   )
 }

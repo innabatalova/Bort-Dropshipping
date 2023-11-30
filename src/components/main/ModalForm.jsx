@@ -17,13 +17,8 @@ const ModalForm = ({ openModalFormProps, titleModalFormProps, btnModalFormProps,
 
   const handleSubmit = (values) => {
     const changeUser = useGetUser()
-    if (!values.passwordNew){
-      changeUser.bio = values.bio
-      changeUser.inn = values.inn
-      changeUser.tel = values.tel
-      changeUser.email = values.email
-    } else {
-      changeUser.password = values.passwordNew
+    for (var item in values) {
+      changeUser[item] !== values[item] ? changeUser[item] = values[item] : changeUser[item]
     }
     useSetUser(changeUser)
     setContextOpenModal('')

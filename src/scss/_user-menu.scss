@@ -35,3 +35,30 @@
 
   }
 }
+
+@media screen and (max-width: 1290px) {
+  .user-menu {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .user-menu {
+    width: 100%;
+    margin-bottom: 25px;
+
+    &__item {
+      background-image: url(../static/img/mobile-menu-arrows.svg);
+
+      &:active,
+      &:hover,
+      &:focus {
+        background-image: url(../static/img/mobile-menu-arrows-hover.svg);
+      }
+
+      &_active {
+        background-image: url(../static/img/mobile-menu-arrows-hover.svg);
+      }
+    }
+  }
+}

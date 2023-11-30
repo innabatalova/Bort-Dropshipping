@@ -52,3 +52,9 @@ ol {
   }
 
 }
+
+@media screen and (max-width: 1000px) {
+  .main {
+    flex-direction: column;
+  }
+}

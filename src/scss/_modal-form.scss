@@ -41,3 +41,26 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px){
+.modal{
+
+  &-form{
+    padding: 20px;
+  }
+}
+}
+
+@media screen and (max-width: 650px) {
+  .modal {
+
+    &-form {
+      max-width: 90%;
+      width: 90%;
+
+      &__button{
+        width: 100%;
+      }
+    }
+  }
+}
