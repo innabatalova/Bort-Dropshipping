@@ -8,7 +8,7 @@ import AuthPage from '../pages/AuthPage'
 const useRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<AuthPage />} />
+      <Route path="/" element={<StartPage />} />
       <Route element={<PrivateRoute />}>
         <Route path="/profile" element={<AuthPage />} />
       </Route>

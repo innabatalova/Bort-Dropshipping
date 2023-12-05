@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { Formik, Form } from 'formik'
+import Modal from '@mui/material/Modal'
 
 import FormInput from './FormInput'
 import CheckInput from './CheckInput'
 import MainButton from '../main/MainButton'
-import InfoModal from '../main/InfoModal'
-
-import { infoModalContext } from '../../context/infoModalContext'
 
 import useCreateUser from '../../hooks/useCreateUser'
 
 const Registration = () => {
-  const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
 
-  const [contextOpenInfoModal, setContextOpenInfoModal] = useContext(infoModalContext)
+  const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>
 
   const regInputValues = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email'],
   ['password', 'Пароль', 'password'], ['passwordDouble', 'Повтор пароля', 'password']]
@@ -31,7 +31,7 @@ const Registration = () => {
         onSubmit={(values, { resetForm }) => {
           useCreateUser(values)
           resetForm()
-          setContextOpenInfoModal('info-overlay_active')
+          handleOpen(true)
         }}>
         {() => (
           <Form className="registration__form">
@@ -41,7 +41,14 @@ const Registration = () => {
           </Form>
         )}
       </Formik>
-      <InfoModal titleInfoModalProps='Вы успешно зарегистрировались!' openInfoModalProps={contextOpenInfoModal}/>
+      <Modal
+        open={open}
+        onClose={handleClose}>
+        <div className="info-modal">
+          <h3 className="info-modal__title">Вы успешно зарегистрировались!</h3>
+          <button className='main-button info-modal__button' onClick={() => handleClose(false)}>Ok</button>
+        </div>
+      </Modal>
     </div>
   )
 }
