@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Formik, Form } from 'formik'
 
 import FormInput from './FormInput'
 import CheckInput from './CheckInput'
 import MainButton from '../main/MainButton'
+import InfoModal from '../main/InfoModal'
+
+import { infoModalContext } from '../../context/infoModalContext'
 
 import useCreateUser from '../../hooks/useCreateUser'
 
 const Registration = () => {
   const linkCheckInputProps = <>Я согласен с <a href="#">Политикой Конфиденциальности</a></>
 
+  const [contextOpenInfoModal, setContextOpenInfoModal] = useContext(infoModalContext)
+
   const regInputValues = [['bio', 'ФИО', 'text'], ['inn', 'ИНН', 'text'], ['tel', 'Телефон', 'tel'], ['email', 'Email', 'email'],
-    ['password', 'Пароль', 'password'], ['passwordDouble', 'Повтор пароля', 'password']]
+  ['password', 'Пароль', 'password'], ['passwordDouble', 'Повтор пароля', 'password']]
   const sortRegInputValues = regInputValues.map((item, index) =>
     <FormInput key={index} idFormInputProps={item[0]} titleFormInputProps={item[1]} typeFormInputProps={item[2]} />)
 
@@ -26,6 +31,7 @@ const Registration = () => {
         onSubmit={(values, { resetForm }) => {
           useCreateUser(values)
           resetForm()
+          setContextOpenInfoModal('info-overlay_active')
         }}>
         {() => (
           <Form className="registration__form">
@@ -35,6 +41,7 @@ const Registration = () => {
           </Form>
         )}
       </Formik>
+      <InfoModal titleInfoModalProps='Вы успешно зарегистрировались!' openInfoModalProps={contextOpenInfoModal}/>
     </div>
   )
 }

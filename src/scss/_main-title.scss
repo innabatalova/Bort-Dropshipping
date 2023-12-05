@@ -1,0 +1,9 @@
+@import "./font";
+
+.main-title {
+  display: inline-block;
+  @include primary;
+  font-size: 16px;
+  color: $black;
+  text-transform: uppercase;
+}

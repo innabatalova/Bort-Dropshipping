@@ -47,14 +47,36 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1000px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .logo{
+    align-self: center;
+    margin-bottom: 20px;
+  }
+
   .navbar {
-    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__item{
+      margin-bottom: 15px;
+
+      &::after{
+        display: none;
+      }
+    }
+
+    &__tooltip{
+      display: none;
+    }
   }
 }
 
-@media screen and (max-width: 450px) {
-  .header {
-    justify-content: center;
-  }
-}
+// @media screen and (max-width: 450px) {
+//   .header {
+//     justify-content: center;
+//   }
+// }

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Formik, Form } from 'formik'
 
 import FormInput from '../onBoard/FormInput'
+import MainTitle from './MainTitle'
 import MainButton from './MainButton'
 
 import useSetUser from '../../hooks/useSetUser'
@@ -15,22 +16,24 @@ const ModalForm = ({ openModalFormProps, titleModalFormProps, btnModalFormProps,
   const sortUserDataInputValues = dataModalFormProps.map((item, index) =>
     <FormInput key={index} idFormInputProps={item[0]} titleFormInputProps={item[1]} typeFormInputProps={item[2]} />)
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, {resetForm}) => {
     const changeUser = useGetUser()
     for (var item in values) {
       changeUser[item] !== values[item] ? changeUser[item] = values[item] : changeUser[item]
     }
     useSetUser(changeUser)
     setContextOpenModal('')
+    resetForm()
   }
 
   return (
     <div className={`modal-overlay ` + openModalFormProps}>
       <div className="modal-form">
-        <h3 className="modal-form__title">{titleModalFormProps}</h3>
+        <MainTitle classMainTitleProps='modal-form__title' titleMainTitleProps={titleModalFormProps} />
         <Formik
           initialValues={initialModalFormProps}
-          onSubmit={handleSubmit}>
+          onSubmit={handleSubmit}
+          enableReinitialize='true'>
           {() => (
             <Form >
               {sortUserDataInputValues}
